@@ -1,5 +1,12 @@
 ---
 
+- name: systemd-networkd | initramfs package
+  tags:
+    - package
+  package:
+    name: initramfs-tools
+  when: ansible_virtualization_type != 'openvz' 
+
 - name: systemd-networkd | disable stable interface names
   tags:
     - network
