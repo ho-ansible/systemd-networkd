@@ -13,3 +13,4 @@
     - kernel
   command: update-initramfs -u
   when: ansible_virtualization_type != 'openvz'
+  ignore_errors: yes
