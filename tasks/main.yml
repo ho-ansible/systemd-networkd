@@ -15,6 +15,7 @@
     dest: /etc/systemd/network/99-default.link
   notify: 
     - update initramfs
+    - daemon-reload
     - restart networkd
 
 - name: systemd-networkd | service

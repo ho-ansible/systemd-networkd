@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Sean Ho
+  description: systemd network manager
+  company: Anchorlytics Consulting
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  platforms:
+   - name: Debian
+     versions:
+     - stable
+     - 10
+
+  galaxy_tags:
+    - systemd
+    - network
+
+dependencies:
+  - role: systemd
