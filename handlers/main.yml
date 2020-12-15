@@ -8,8 +8,8 @@
 
 - name: update initramfs
   tags:
-    - initramfs
-    - boot
-    - kernel
+  - initramfs
+  - boot
+  - kernel
   command: update-initramfs -u
   when: ansible_virtualization_type != 'openvz' 
