@@ -2,26 +2,26 @@
 
 - name: systemd-networkd | initramfs package
   tags:
-    - package
+  - package
   package:
     name: initramfs-tools
   when: ansible_virtualization_type != 'openvz' 
 
 - name: systemd-networkd | disable stable interface names
   tags:
-    - network
+  - network
   copy:
     content: ""
     dest: /etc/systemd/network/99-default.link
   notify: 
-    - update initramfs
-    - daemon-reload
-    - restart networkd
+  - update initramfs
+  - daemon-reload
+  - restart networkd
 
 - name: systemd-networkd | service
   tags:
-    - network
-    - service
+  - network
+  - service
   service:
     name: systemd-networkd
     state: started
