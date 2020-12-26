@@ -5,9 +5,8 @@ Management of network interfaces, systemd style
 Debian stable
 
 ## Role Variables
-+ `networkd_templates`: list of dicts:
-  + `src`: jinja template
-  + `dest`: path under `/etc/systemd/network/`
++ `networkd_extra`: dict of (path, contents) pairs for
+  files to add under `/etc/systemd/network/`
 
 ## Handlers
 + `update initramfs`: regenerates the ram disk used by the kernel

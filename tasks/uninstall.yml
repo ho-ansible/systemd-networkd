@@ -1,0 +1,13 @@
+---
+
+- name: systemd-networkd | remove custom config
+  tags:
+  - config
+  file:
+    dest: /etc/systemd/network/{{ item.key }}
+    state: absent
+  notify:
+  - daemon-reload
+  - restart networkd
+  loop: "{{ networkd_extra | dict2items }}"
+

@@ -18,16 +18,16 @@
   - daemon-reload
   - restart networkd
 
-- name: systemd-networkd | custom templates
+- name: systemd-networkd | custom config
   tags:
   - config
-  template:
-    src: "{{ item.src }}"
-    dest: "/etc/systemd/network/{{ item.dest }}"
+  copy:
+    content: "{{ item.value }}"
+    dest: /etc/systemd/network/{{ item.key }}
   notify:
   - daemon-reload
   - restart networkd
-  loop: "{{ networkd_templates }}"
+  loop: "{{ networkd_extra | dict2items }}"
 
 - name: systemd-networkd | service
   tags:

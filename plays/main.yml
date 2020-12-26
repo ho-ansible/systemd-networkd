@@ -2,9 +2,9 @@
 # Configure template role
 # Replace 'all' with your own inventory group
 ---
-- name: template | template role
-  hosts: all
+- name: systemd-networkd | apply role
+  hosts: linux
   roles:
-  - role: template
+  - role: systemd-networkd
     tags:
-    - template
+    - systemd-networkd
