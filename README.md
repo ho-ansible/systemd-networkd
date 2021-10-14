@@ -2,15 +2,11 @@
 Management of network interfaces, systemd style
 
 ## Requirements
-Debian stable
+Debian bullseye
 
 ## Role Variables
 + `networkd_extra`: dict of (path, contents) pairs for
   files to add under `/etc/systemd/network/`
-
-## Handlers
-+ `update initramfs`: regenerates the ram disk used by the kernel
-  to find the root filesystem during boot
 
 ## Playbooks
 + `main.yml`: apply role
@@ -18,6 +14,7 @@ Debian stable
 
 ## Dependencies
 + [ho-ansible.systemd](https://github.com/ho-ansible/systemd)
++ [ho-ansible.common](https://github.com/ho-ansible/common)
 
 ## License
 + Ansible role licensed [MIT](LICENSE)
