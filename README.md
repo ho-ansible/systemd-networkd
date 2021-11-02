@@ -14,7 +14,6 @@ Debian bullseye
 
 ## Dependencies
 + [ho-ansible.systemd](https://github.com/ho-ansible/systemd)
-+ [ho-ansible.common](https://github.com/ho-ansible/common)
 
 ## License
 + Ansible role licensed [MIT](LICENSE)

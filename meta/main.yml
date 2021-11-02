@@ -18,5 +18,4 @@ galaxy_info:
   - network
 
 dependencies:
-- role: common
 - role: systemd

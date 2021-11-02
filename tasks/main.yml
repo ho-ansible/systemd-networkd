@@ -1,5 +1,10 @@
 ---
 
+- name: systemd-networkd | load handlers
+  import_role:
+    name: common
+    handlers_from: initramfs.yml
+
 - name: systemd-networkd | disable stable interface names
   tags:
   - network
