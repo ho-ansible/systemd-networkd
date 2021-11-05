@@ -1,2 +1,3 @@
 ---
 networkd_extra: {}
+networkd_eth0_naming: false

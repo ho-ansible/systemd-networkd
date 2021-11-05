@@ -3,6 +3,7 @@
 - name: systemd-networkd | load handlers
   import_role:
     name: common
+    tasks_from: empty.yml
     handlers_from: initramfs.yml
 
 - name: systemd-networkd | disable stable interface names
@@ -11,6 +12,7 @@
   copy:
     content: ""
     dest: /etc/systemd/network/99-default.link
+  when: networkd_eth0_naming
   notify: 
   - update initramfs
   - daemon-reload
