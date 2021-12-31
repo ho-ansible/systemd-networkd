@@ -29,13 +29,14 @@
   - restart networkd
   loop: "{{ networkd_extra | dict2items }}"
 
-- name: systemd-networkd | networking (ifup) service
+- name: systemd-networkd | disable networking service
   tags:
   - network
   - service
   service:
     name: networking
-    enabled: yes
+    enabled: no
+  when: ifup_disable
 
 - name: systemd-networkd | service
   tags:

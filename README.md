@@ -9,6 +9,10 @@ Debian bullseye
   files to add under `/etc/systemd/network/`
 + `networkd_eth0_naming` (default: false): boolean, whether to
   disable predictable network interface naming
++ `ifup_disable` (default: true): whether to disable `networking.service`
+  and let systemd-networkd manage interfaces rather than `ifup`
+  (`/etc/networking/`)
+
 ## Playbooks
 + `main.yml`: apply role
 + `uninstall.yml`: remove. Run before removing config from inventory.
