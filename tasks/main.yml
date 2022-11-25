@@ -15,8 +15,7 @@
   when: networkd_eth0_naming
   notify: 
   - update initramfs
-  - daemon-reload
-  - restart networkd
+  - reload networkd
 
 - name: systemd-networkd | custom config
   tags:
@@ -25,8 +24,7 @@
     content: "{{ item.value }}"
     dest: /etc/systemd/network/{{ item.key }}
   notify:
-  - daemon-reload
-  - restart networkd
+  - reload networkd
   loop: "{{ networkd_extra | dict2items }}"
 
 - name: systemd-networkd | disable networking service

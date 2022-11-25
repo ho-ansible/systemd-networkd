@@ -5,3 +5,8 @@
   service:
     name: systemd-networkd
     state: restarted
+
+- name: reload networkd
+  tags:
+  - service
+  command: networkctl reload
